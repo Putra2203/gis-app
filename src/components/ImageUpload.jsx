@@ -4,6 +4,7 @@ const ImageUpload = () => {
   const [kelurahanData, setKelurahanData] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedKelurahan, setSelectedKelurahan] = useState("");
+  const [searchKelurahan, setSearchKelurahan] = useState("");
 
   useEffect(() => {
     // Fetch kelurahan data
@@ -15,6 +16,12 @@ const ImageUpload = () => {
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
   };
+
+  const filteredKelurahan = kelurahanData
+    .sort((a, b) => a.nama_kelurahan.localeCompare(b.nama_kelurahan)) // Urutkan alfabet
+    .filter((kelurahan) =>
+      kelurahan.nama_kelurahan.toLowerCase().includes(searchKelurahan.toLowerCase())
+    );
 
   const handleUpload = (e) => {
     e.preventDefault();
@@ -42,17 +49,31 @@ const ImageUpload = () => {
       <form onSubmit={handleUpload}>
         <div>
           <label htmlFor="kelurahan">Select Kelurahan:</label>
+          <input
+            type="text"
+            placeholder="Cari kelurahan"
+            value={searchKelurahan}
+            onChange={(e) => setSearchKelurahan(e.target.value)} // Perbarui searchTerm
+          />
+
+          {/* Dropdown kelurahan */}
           <select
             id="kelurahan"
             value={selectedKelurahan}
             onChange={(e) => setSelectedKelurahan(e.target.value)}
           >
             <option value="">-- Choose Kelurahan --</option>
-            {kelurahanData.map((kelurahan) => (
-              <option key={kelurahan.id} value={kelurahan.id}>
-                {kelurahan.nama_kelurahan}
+            {filteredKelurahan.length > 0 ? (
+              filteredKelurahan.map((kelurahan) => (
+                <option key={kelurahan.id} value={kelurahan.id}>
+                  {kelurahan.nama_kelurahan}
+                </option>
+              ))
+            ) : (
+              <option value="" disabled>
+                Tidak ada hasil
               </option>
-            ))}
+            )}
           </select>
         </div>
 

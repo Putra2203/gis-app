@@ -233,9 +233,9 @@ const TableK = () => {
           <div className="footer-section footer-links">
             <h3>Link Terkait</h3>
             <ul>
-              <li><a href="#">Semarangkota.co.id</a></li>
-              <li><a href="#">Call Center 112</a></li>
-              <li><a href="#">Sapa Mba Ita</a></li>
+              <li><a href="#">| Semarangkota.co.id</a></li>
+              <li><a href="#">| Call Center 112</a></li>
+              <li><a href="#">| Sapa Mba Ita</a></li>
             </ul>
           </div>
           <div className="footer-section footer-contact">

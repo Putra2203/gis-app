@@ -246,10 +246,10 @@ const TableK = () => {
             <p>Jl. Pemuda No.148, Kota Semarang</p>
           </div>
         </div>
-        <div className="footer-bottom">
+      </footer>
+      <div className="footer-bottom">
           <p>2024 copyright © all right reserved</p>
         </div>
-      </footer>
     </div>
   );
 };

@@ -140,7 +140,7 @@ const MainComp = () => {
       <div className="grid items-center grid-cols-8 gap-4 p-4 mt-4">
         <span className="col-span-1 text-gray-600">No</span>
         <span className="col-span-2 text-gray-600">Kecamatan</span>
-        <span className="col-span-2 text-gray-600">Kelurahan | Alamat</span>
+        <span className="col-span-2 text-gray-600">Kelurahan</span>
         <span className="col-span-1 text-gray-600">Distance</span>
         <span className="col-span-1 text-gray-600">Map Link</span>
         <span className="col-span-1 text-gray-600">Photo</span>

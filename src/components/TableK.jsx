@@ -112,7 +112,7 @@ const MainComp = () => {
             id="itemsPerPage"
             value={itemsPerPage}
             onChange={(e) => setItemsPerPage(Number(e.target.value))}
-            className="px-2 py-1 border rounded bg-white text-black"
+            className="px-2 py-1 text-black bg-white border rounded"
           >
             <option value={5}>5</option>
             <option value={10}>10</option>
@@ -132,7 +132,7 @@ const MainComp = () => {
             placeholder="Search by Kecamatan or Kelurahan"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value.toUpperCase())} // Automatically convert to uppercase
-            className="w-full px-4 py-2 border rounded-lg bg-white"
+            className="w-full px-4 py-2 bg-white border rounded-lg"
           />
         </div>
       </div>
@@ -200,17 +200,17 @@ const MainComp = () => {
       {/* Pagination */}
       <div className="flex justify-center mt-6 join no">
         <button
-          className="hover:bg-slate-200 join-item btn bg-white text-black border-none"
+          className="text-black bg-white border-none hover:bg-slate-200 join-item btn"
           onClick={() => paginate(Math.max(1, currentPage - 1))}
           disabled={currentPage === 1}
         >
           «
         </button>
-        <button className="hover:bg-slate-200 join-item btn bg-white text-black border-none">
+        <button className="text-black bg-white border-none hover:bg-slate-200 join-item btn">
           Page {currentPage} of {Math.ceil(filteredData.length / itemsPerPage)}
         </button>
         <button
-          className="hover:bg-slate-200 join-item btn bg-white text-black border-none"
+          className="text-black bg-white border-none hover:bg-slate-200 join-item btn"
           onClick={() =>
             paginate(
               Math.min(

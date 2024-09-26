@@ -4,10 +4,10 @@ import map from "../Asset/map.png";
 const Footer = () => {
   return (
     <footer className="p-10 font-normal footer font-poppins bg-[#000126] text-white flex justify-center mx-auto">
-      <div className="flex flex-row max-w-screen-xl gap-14 ">
-        <aside className="w-64 ">
+      <div className="flex-col max-w-screen-sm lg:flex md:grid md:grid-cols-2 lg:flex-row md:max-w-screen-sm lg:max-w-screen-xl gap-14">
+        <aside className="lg:w-64 md:w-90">
           <img src={logo} alt="" />
-          <p className="mt-4">
+          <p className="mt-4 text-pretty">
             Aplikasi ini menampilkan data lokasi strategis dari berbagai
             kelurahan di Kota Semarang, membantu akses informasi geografis yang
             akurat dan relevan.

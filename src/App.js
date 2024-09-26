@@ -1,13 +1,15 @@
-import ImageUpload from "./components/ImageUpload";
+// import ImageUpload from "./components/ImageUpload";
+import Header from "./components/Header";
 import TableK from "./components/TableK";
+import Footer from "./components/Footer";
 import "./index";
-import React, { useEffect, useState } from "react";
 
 const App = () => {
   return (
     <>
-      <ImageUpload />
+      <Header />
       <TableK />
+      <Footer />
     </>
   );
 };

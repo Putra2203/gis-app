@@ -105,14 +105,14 @@ const MainComp = () => {
 
       <div className="flex justify-between">
         <div >
-          <label htmlFor="itemsPerPage" className="mr-2">
+          <label htmlFor="itemsPerPage" className="mr-2 text-slate-900">
             Items per page:
           </label>
-          <select
+          <select 
             id="itemsPerPage"
             value={itemsPerPage}
             onChange={(e) => setItemsPerPage(Number(e.target.value))}
-            className="px-2 py-1 border rounded"
+            className="px-2 py-1 border rounded bg-white text-black"
           >
             <option value={5}>5</option>
             <option value={10}>10</option>
@@ -132,7 +132,7 @@ const MainComp = () => {
             placeholder="Search by Kecamatan or Kelurahan"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value.toUpperCase())} // Automatically convert to uppercase
-            className="w-full px-4 py-2 border rounded-lg"
+            className="w-full px-4 py-2 border rounded-lg bg-white"
           />
         </div>
       </div>
@@ -199,19 +199,19 @@ const MainComp = () => {
       ))}
 
       {/* Pagination */}
-      <div className="flex justify-center mt-6 join">
+      <div className="flex justify-center mt-6 join no">
         <button
-          className="join-item btn"
+          className="hover:bg-slate-200 join-item btn bg-white text-black border-none"
           onClick={() => paginate(Math.max(1, currentPage - 1))}
           disabled={currentPage === 1}
         >
           «
         </button>
-        <button className="join-item btn">
+        <button className="hover:bg-slate-200 join-item btn bg-white text-black border-none">
           Page {currentPage} of {Math.ceil(filteredData.length / itemsPerPage)}
         </button>
         <button
-          className="join-item btn"
+          className="hover:bg-slate-200 join-item btn bg-white text-black border-none"
           onClick={() =>
             paginate(
               Math.min(

@@ -15,7 +15,6 @@ const MainComp = () => {
     const R = 6371; // Radius of the Earth in km
     const dLat = (lat2 - lat1) * (Math.PI / 180);
     const dLon = (lon2 - lon1) * (Math.PI / 180);
-
     const a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos(lat1 * (Math.PI / 180)) *
@@ -76,8 +75,21 @@ const MainComp = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 
-  // Function to change page
+  // Fungsi untuk mengubah halaman
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const visiblePages = [];
+  const pageLimit = 5;  
+  let startPage = Math.max(currentPage - Math.floor(pageLimit / 2), 1);
+  let endPage = Math.min(startPage + pageLimit - 1, Math.ceil(filteredData.length / itemsPerPage));
+
+  if (endPage - startPage < pageLimit - 1) {
+    startPage = Math.max(endPage - pageLimit + 1, 1);
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
+    visiblePages.push(i);
+  }
 
   if (loading) {
     return <p>Loading kelurahan data...</p>;

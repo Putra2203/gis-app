@@ -161,7 +161,6 @@ const MainComp = () => {
           </div>
           <div className="col-span-2">
             <span className="text-gray-900 ">{kelurahan.nama_kelurahan}</span>
-            <p className="text-gray-700">ini buat alamat </p>
           </div>
           <div className="col-span-1">
             {userPosition.lat && userPosition.lon ? (
